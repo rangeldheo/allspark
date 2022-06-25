@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
  * RELACIONAMENTOS de modelos, páginação e
  * numerdo de registros por pagina.
  */
-class SearchServices
+class ModelSearch
 {
     /**
      * String do comnando [LIKE] Mysql
@@ -44,6 +44,11 @@ class SearchServices
      * na páginação
      */
     const RESULTS = 'results';
+
+      /**
+     * Inteiro que controla a quatidade PADRÃO de resultados por pagina
+     */
+    const RESULTS_DEFAULT_VALUE = 20;
 
     public static $fieldForOrderBy = null;
     public static $orderbyDirection = 'ASC';

@@ -2,7 +2,7 @@
 
 namespace App\Abstracts;
 
-use App\Interfaces\RespositoryInterface;
+use App\Interfaces\RepositoryInterface;
 use App\Repository\RepositorySincronizeRelations;
 use App\Services\SearchServices;
 use Illuminate\Contracts\Pagination\Paginator;
@@ -11,20 +11,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 
-abstract class RespositoryAbstract implements RespositoryInterface
+abstract class RepositoryAbstract implements RepositoryInterface
 {
     /**
      * Retorna todas as registros do modelo paginados
      * com suporte a queryParams para filtrar os registros
      * @param ValidatesWhenResolved $request
-     * @param Model $model
+     * @param Model $modelName
      * @return Paginator
      */
     public static function getAllPaginate(
         ValidatesWhenResolved $request,
-        string $model
+        string $modelName
     ): Paginator {
-        return $model::search($request);
+        return $modelName::search($request);
     }
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\VersionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,5 +23,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1'], function () {
 
+    Route::post('login', [LoginController::class, 'authenticate']);
+
     Route::get('version', [VersionController::class, 'index']);
+
+    Route::get('post', [PostController::class, 'index']);
+
 });
+
+
