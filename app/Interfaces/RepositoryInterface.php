@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Interfaces;
@@ -6,7 +5,7 @@ namespace App\Interfaces;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Contracts\Validation\ValidatesWhenResolved;
 
-interface RespositoryInterface
+interface RepositoryInterface
 {
 
     public static function index($classe);
