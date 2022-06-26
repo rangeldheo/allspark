@@ -30,4 +30,9 @@ class LoginController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
+
+    public function login(Request $request)
+    {
+        return $this->authenticate($request);
+    }
 }

@@ -33,6 +33,8 @@ RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
 
+RUN run --rm npm install
+
 # Set working directory
 WORKDIR /var/www && chmod 777 /var/www
 
